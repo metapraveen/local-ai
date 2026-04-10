@@ -5,7 +5,9 @@ services:
     ports:
       - "80:8080"
     environment:
-      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      # Points to the local MLX-LM server (variable names are dictated by Open WebUI)
+      - OPENAI_API_BASE_URLS=http://host.docker.internal:8000/v1
+      - OPENAI_API_KEYS=mlx
       - WEBUI_AUTH=false
       - WEBUI_NAME=Local AI
       # Web Search via SearXNG
